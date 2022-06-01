@@ -1,0 +1,11 @@
+Name,Amount,Date,Image
+Laker,4000,"datetime(2022, 6, 18, 0, 0, tzinfo=timezone.utc).isoformat()",Images/image1.png
+1990,5000,"datetime(2022, 6, 1, 0, 0, tzinfo=timezone.utc).isoformat()",Images/image2.png
+AllStar,7000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/image3.png
+Atl0,5500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl0.jpg
+Atl12,6000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl12.jpg
+Atl17,6500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl17.jpg
+Atl7,6500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl7.jpg
+Bulls21,7000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/bulls21.jpg
+Bulls5,7000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/bulls5.jpg
+Chi7,7500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/chi7.jpg

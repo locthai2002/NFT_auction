@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime,timezone
 from web3 import Web3
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
+import nft_functions as nft
 
 
 # #EH: create function for bid entry dataframe
@@ -38,6 +39,7 @@ nft_database = {
     "1990_NFT2": ["1990", 5000, datetime(2022, 6, 1, 0, 0, tzinfo=timezone.utc).isoformat(),"Images/image2.png"],
     "AllStar_NFT3": ["AllStar",7000, datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat(),"Images/image3.png"]
 }
+nft.insert_data("dallas42", 5000, datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat(), "Images/dallas42.jpg")
 
 
 
