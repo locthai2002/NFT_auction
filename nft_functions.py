@@ -86,7 +86,7 @@
      "name": "stderr",
      "output_type": "stream",
      "text": [
-      "C:\\Users\\locth\\AppData\\Local\\Temp/ipykernel_260748/1270096792.py:21: SADeprecationWarning: The Engine.table_names() method is deprecated and will be removed in a future release.  Please refer to Inspector.get_table_names(). (deprecated since: 1.4)\n",
+      "C:\\Users\\locth\\AppData\\Local\\Temp/ipykernel_278416/1270096792.py:21: SADeprecationWarning: The Engine.table_names() method is deprecated and will be removed in a future release.  Please refer to Inspector.get_table_names(). (deprecated since: 1.4)\n",
       "  engine.table_names()\n"
      ]
     },
@@ -228,7 +228,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 6,
    "id": "fa516b90-6305-46c9-b163-83fb9bbed86f",
    "metadata": {},
    "outputs": [],
@@ -300,25 +300,24 @@
      "output_type": "stream",
      "text": [
       "\n",
-      "    INSERT INTO create_nft_table\n",
-      "    VALUES ('names', 'amount', 'date', 'image')\n",
-      "    \n"
+      "INSERT INTO nft_info\n",
+      "VALUES ('names', 'amount', 'date', 'image')\n",
+      "\n"
      ]
     },
     {
      "ename": "OperationalError",
-     "evalue": "(sqlite3.OperationalError) no such table: create_nft_table\n[SQL: \n    INSERT INTO create_nft_table\n    VALUES ('names', 'amount', 'date', 'image')\n    ]\n(Background on this error at: https://sqlalche.me/e/14/e3q8)",
+     "evalue": "(sqlite3.OperationalError) no such table: nft_info\n[SQL: \nINSERT INTO nft_info\nVALUES ('names', 'amount', 'date', 'image')\n]\n(Background on this error at: https://sqlalche.me/e/14/e3q8)",
      "output_type": "error",
      "traceback": [
       "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
       "\u001b[1;31mOperationalError\u001b[0m                          Traceback (most recent call last)",
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\engine\\base.py\u001b[0m in \u001b[0;36m_execute_context\u001b[1;34m(self, dialect, constructor, statement, parameters, execution_options, *args, **kw)\u001b[0m\n\u001b[0;32m   1801\u001b[0m                 \u001b[1;32mif\u001b[0m \u001b[1;32mnot\u001b[0m \u001b[0mevt_handled\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m-> 1802\u001b[1;33m                     self.dialect.do_execute(\n\u001b[0m\u001b[0;32m   1803\u001b[0m                         \u001b[0mcursor\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mparameters\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcontext\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\engine\\default.py\u001b[0m in \u001b[0;36mdo_execute\u001b[1;34m(self, cursor, statement, parameters, context)\u001b[0m\n\u001b[0;32m    718\u001b[0m     \u001b[1;32mdef\u001b[0m \u001b[0mdo_execute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcursor\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mparameters\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcontext\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mNone\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 719\u001b[1;33m         \u001b[0mcursor\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexecute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mparameters\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    720\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mOperationalError\u001b[0m: no such table: create_nft_table",
+      "\u001b[1;31mOperationalError\u001b[0m: no such table: nft_info",
       "\nThe above exception was the direct cause of the following exception:\n",
       "\u001b[1;31mOperationalError\u001b[0m                          Traceback (most recent call last)",
-      "\u001b[1;32m~\\AppData\\Local\\Temp/ipykernel_260748/2594769380.py\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0minsert_data\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'42d'\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;36m5000\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m'12/05/2012'\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m\"321\"\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[1;32m~\\AppData\\Local\\Temp/ipykernel_260748/2692028417.py\u001b[0m in \u001b[0;36minsert_data\u001b[1;34m(names, amount, date, image)\u001b[0m\n\u001b[0;32m      6\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      7\u001b[0m     \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0minsert_data\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 8\u001b[1;33m     \u001b[0mengine\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexecute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0minsert_data\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      9\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     10\u001b[0m     \u001b[0msql_nft_info_df\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mread_sql_table\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mcreate_nft_table\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcon\u001b[0m\u001b[1;33m=\u001b[0m\u001b[0mengine\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[1;32m~\\AppData\\Local\\Temp/ipykernel_278416/872829103.py\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[0;32m     14\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     15\u001b[0m \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0minsert_data\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m---> 16\u001b[1;33m \u001b[0mengine\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexecute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0minsert_data\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m     17\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m     18\u001b[0m \u001b[0msql_nft_info_df\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mread_sql_table\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mcreate_nft_table\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcon\u001b[0m\u001b[1;33m=\u001b[0m\u001b[0mengine\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
       "\u001b[1;32m<string>\u001b[0m in \u001b[0;36mexecute\u001b[1;34m(self, statement, *multiparams, **params)\u001b[0m\n",
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\util\\deprecations.py\u001b[0m in \u001b[0;36mwarned\u001b[1;34m(fn, *args, **kwargs)\u001b[0m\n\u001b[0;32m    399\u001b[0m         \u001b[1;32mif\u001b[0m \u001b[1;32mnot\u001b[0m \u001b[0mskip_warning\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    400\u001b[0m             \u001b[0m_warn_with_version\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mmessage\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mversion\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mwtype\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mstacklevel\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;36m3\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 401\u001b[1;33m         \u001b[1;32mreturn\u001b[0m \u001b[0mfn\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m*\u001b[0m\u001b[0margs\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    402\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    403\u001b[0m     \u001b[0mdoc\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mfunc\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0m__doc__\u001b[0m \u001b[1;32mis\u001b[0m \u001b[1;32mnot\u001b[0m \u001b[1;32mNone\u001b[0m \u001b[1;32mand\u001b[0m \u001b[0mfunc\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0m__doc__\u001b[0m \u001b[1;32mor\u001b[0m \u001b[1;34m\"\"\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\engine\\base.py\u001b[0m in \u001b[0;36mexecute\u001b[1;34m(self, statement, *multiparams, **params)\u001b[0m\n\u001b[0;32m   3137\u001b[0m         \"\"\"\n\u001b[0;32m   3138\u001b[0m         \u001b[0mconnection\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mconnect\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mclose_with_result\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mTrue\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m-> 3139\u001b[1;33m         \u001b[1;32mreturn\u001b[0m \u001b[0mconnection\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexecute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m*\u001b[0m\u001b[0mmultiparams\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m**\u001b[0m\u001b[0mparams\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m   3140\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m   3141\u001b[0m     @util.deprecated_20(\n",
@@ -329,12 +328,31 @@
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\util\\compat.py\u001b[0m in \u001b[0;36mraise_\u001b[1;34m(***failed resolving arguments***)\u001b[0m\n\u001b[0;32m    205\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    206\u001b[0m         \u001b[1;32mtry\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 207\u001b[1;33m             \u001b[1;32mraise\u001b[0m \u001b[0mexception\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    208\u001b[0m         \u001b[1;32mfinally\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    209\u001b[0m             \u001b[1;31m# credit to\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\engine\\base.py\u001b[0m in \u001b[0;36m_execute_context\u001b[1;34m(self, dialect, constructor, statement, parameters, execution_options, *args, **kw)\u001b[0m\n\u001b[0;32m   1800\u001b[0m                             \u001b[1;32mbreak\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m   1801\u001b[0m                 \u001b[1;32mif\u001b[0m \u001b[1;32mnot\u001b[0m \u001b[0mevt_handled\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m-> 1802\u001b[1;33m                     self.dialect.do_execute(\n\u001b[0m\u001b[0;32m   1803\u001b[0m                         \u001b[0mcursor\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mparameters\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcontext\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m   1804\u001b[0m                     )\n",
       "\u001b[1;32m~\\anaconda3\\envs\\dev\\lib\\site-packages\\sqlalchemy\\engine\\default.py\u001b[0m in \u001b[0;36mdo_execute\u001b[1;34m(self, cursor, statement, parameters, context)\u001b[0m\n\u001b[0;32m    717\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    718\u001b[0m     \u001b[1;32mdef\u001b[0m \u001b[0mdo_execute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcursor\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mparameters\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcontext\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mNone\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m--> 719\u001b[1;33m         \u001b[0mcursor\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mexecute\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mparameters\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m    720\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m    721\u001b[0m     \u001b[1;32mdef\u001b[0m \u001b[0mdo_execute_no_params\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcursor\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mstatement\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mcontext\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;32mNone\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
-      "\u001b[1;31mOperationalError\u001b[0m: (sqlite3.OperationalError) no such table: create_nft_table\n[SQL: \n    INSERT INTO create_nft_table\n    VALUES ('names', 'amount', 'date', 'image')\n    ]\n(Background on this error at: https://sqlalche.me/e/14/e3q8)"
+      "\u001b[1;31mOperationalError\u001b[0m: (sqlite3.OperationalError) no such table: nft_info\n[SQL: \nINSERT INTO nft_info\nVALUES ('names', 'amount', 'date', 'image')\n]\n(Background on this error at: https://sqlalche.me/e/14/e3q8)"
      ]
     }
    ],
    "source": [
-    "insert_data('42d', 5000, '12/05/2012', \"321\")\n"
+    "  ##  insert_data('42d', '5000', '12/05/2012', \"321\")\n",
+    "create_nft_table = \"\"\"\n",
+    "CREATE TABLE nft_info (\n",
+    "  Name VARCHAR(50) NOT NULL,\n",
+    "  Amount VARCHAR(10),\n",
+    "  Date DATETIME,\n",
+    "  Image VARCHAR(200)\n",
+    "  );\n",
+    " \"\"\"\n",
+    "insert_data = \"\"\"\n",
+    "INSERT INTO nft_info\n",
+    "VALUES ('names', 'amount', 'date', 'image')\n",
+    "\"\"\"\n",
+    "\n",
+    "print(insert_data)\n",
+    "engine.execute(insert_data)\n",
+    "    \n",
+    "sql_nft_info_df = pd.read_sql_table(create_nft_table, con=engine)\n",
+    "    \n",
+    "display(sql_nft_info_df.tail())"
    ]
   },
   {
