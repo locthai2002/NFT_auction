@@ -1,11 +1,11 @@
-Name,Amount,Date,Image
-Laker,4000,"datetime(2022, 6, 18, 0, 0, tzinfo=timezone.utc).isoformat()",Images/image1.png
-1990,5000,"datetime(2022, 6, 1, 0, 0, tzinfo=timezone.utc).isoformat()",Images/image2.png
-AllStar,7000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/image3.png
-Atl0,5500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl0.jpg
-Atl12,6000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl12.jpg
-Atl17,6500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl17.jpg
-Atl7,6500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/atl7.jpg
-Bulls21,7000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/bulls21.jpg
-Bulls5,7000,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/bulls5.jpg
-Chi7,7500,"datetime(2022, 6, 8, 0, 0, tzinfo=timezone.utc).isoformat()",Images/chi7.jpg
+filename,filetype,filesize,Owner_Name,Public_Key,Asset_name,bid_start_amount,Bid_close_date
+Laker,Images/image1.png,253020,Images/image1.png,0xc852Ab4073FF57c7Fa824D158A3Cdd5CC6707399,Laker_asset,4000,6/4/2002
+1990,Images/image2.png,253020,Images/image2.png,0x408e647764abbAB762fFc730afd3888552660C35,,,
+AllStar,Images/image3.png,253020,Images/image3.png,0x949cD3e57F62499ca874F3C59D456F18b9CeBd8F,,,
+Atl0,Images/atl0.jpg,253020,Images/atl0.jpg,0x23f86eA3f98701A05E8eB6596AAc1F01E3600771,,,
+Atl12,Images/atl12.jpg,253020,Images/atl12.jpg,0x15784317248d616AFf662f512963e35950743Df4,,,
+Atl17,Images/atl17.jpg,253020,Images/atl17.jpg,0x10e1072f12Abd7Db152aF026D56fA6692B0B24EC,,,
+Atl7,Images/atl7.jpg,253020,Images/atl7.jpg,0x5a50Fe1A38D5b0C10Cea72C4BB857193e5595DDa,,,
+Bulls21,Images/bulls21.jpg,253020,Images/bulls21.jpg,0x8FfdB71Ec8F0925ED9Bc029Eb4072dd369104074,,,
+Chi10,Images/bulls5.jpg,253020,Images/bulls5.jpg,0x8BDaE51c43C32402618D7eFC841c2486fbeEBf59,Bulls10,7000,4/3/2020
+Bulls7,Images/chi7.jpg,253020,Images/chi7.jpg,0x031E8c27e6Bf3ea5d32552A3D29c1C4FD6d46A0f,Chi7,5000,5/2/2022
