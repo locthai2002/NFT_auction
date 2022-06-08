@@ -1,4 +1,4 @@
-filename,filetype,filesize,Owner_Name,Public_Key,Asset_name,bid_start_amount,Bid_close_date
+filename,filetype,filepath,Owner_Name,Public_Key,Asset_name,bid_start_amount,Bid_close_date
 Laker,Images/image1.png,253020,Images/image1.png,0xc852Ab4073FF57c7Fa824D158A3Cdd5CC6707399,Laker_asset,4000,6/4/2002
 1990,Images/image2.png,253020,Images/image2.png,0x408e647764abbAB762fFc730afd3888552660C35,,,
 AllStar,Images/image3.png,253020,Images/image3.png,0x949cD3e57F62499ca874F3C59D456F18b9CeBd8F,,,

@@ -24,8 +24,8 @@ engine = sqlalchemy.create_engine(database_connection_string, echo=True)
 create_nft_table = """
 CREATE TABLE nft_info (
     "filename"             VARCHAR(50),
-    "filetype"             VARCHAR(50),
-    "filesize"             INT,
+    "filepath"             VARCHAR(50),
+    "filesize"             VARCHAR(50),
     "Owner_Name"           VARCHAR(50),
     "Public_Key"           VARCHAR(200),
     "Asset_name"           VARCHAR(50),
@@ -59,7 +59,7 @@ def load_image(image_file):
 
 def insert_data(nft_df):
     for index, row in nft_df.iterrows():
-         engine.execute("INSERT INTO nft_info(filename, filetype, filesize, Owner_Name, Public_Key, Asset_name, bid_start_amount, Bid_close_date) values(?,?,?,?,?,?,?,?)", row.filename, row.filetype,                                                  row.filesize,row.Owner_Name, row.Public_Key, row.Asset_name, row.bid_start_amount, row.Bid_close_date)
+         engine.execute("INSERT INTO nft_info(filename, filepath, filesize, Owner_Name, Public_Key, Asset_name, bid_start_amount, Bid_close_date) values(?,?,?,?,?,?,?,?)", row.filename, row.filepath,                                                  row.filesize,row.Owner_Name, row.Public_Key, row.Asset_name, row.bid_start_amount, row.Bid_close_date)
     
     sql_nft_info_df = pd.read_sql_table('nft_info', con=engine)
     
@@ -79,8 +79,8 @@ def update_data(Public_Key):
     update_data = """
     UPDATE nft_info
     SET 'filename' = '{nft_df.filename}',
-        'filetype' = '{nft_df.filetype}',
-        'filesize' = '{nft_df.filesize}',
+        'filepath' = '{nft_df.filepath}',
+        'filesize' = 'fileDir/'+'{nft_df.filename}',
         'Owner_Name' = '{nft_df.Owner_Name}',
         'Asset_name' = '{nft_df.Asset_name}',
         'bid_start_amount' = '{nft_df.bid_start_amount}',
@@ -105,7 +105,7 @@ image_file = st.file_uploader("Upload Images",
 
 if image_file is not None and (len(username) > 0) and (len(public_key)>0) and (len(asset_caption)>0):
           # TO See details
-          file_details = {"filename":image_file.name, "filetype":image_file.type,
+          file_details = {"filename":image_file.name, "filepath":image_file.type,
                     "filesize":image_file.size,"Owner_Name":username,'Public_Key':public_key,'Asset_name':asset_caption,'bid_start_amount':bid_start,"Bid_close_date":close_date_request.isoformat()}
 
           st.write("Please preview transaction detail before submission.")
