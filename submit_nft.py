@@ -1,14 +1,82 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@locthai2002 
+EuniceH
+/
+NFT_auction
+Public
+Code
+Issues
+Pull requests
+1
+Actions
+Projects
+Wiki
+Security
+Insights
+NFT_auction/submit_nft.py /
+@EuniceH
+EuniceH update public key selecter and sql
+Latest commit 4eac2c0 yesterday
+ History
+ 1 contributor
+193 lines (139 sloc)  5.88 KB
+   
 
 import streamlit as st
 import pandas as pd
 from PIL import Image
+from web3 import Web3
 import os
 from datetime import datetime,timezone,timedelta
 import sqlalchemy
+from dotenv import load_dotenv
+from pathlib import Path
+import json
+
+
 #import nft_functions.py
+
+#EH: load env file
+load_dotenv()
+
+
+# Define and connect a new Web3 provider
+w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 
 # EH: Set layout as wide
 st.set_page_config(page_title="NFT Submission",layout="wide")
+
+@st.cache(allow_output_mutation=True)
+def load_contract():
+
+    # Load the contract ABI
+    with open(Path('./contracts/compiled/nftRegistry_abi.json')) as f:
+        contract_abi = json.load(f)
+
+    # Set the contract address (this is the address of the deployed contract)
+    contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+
+    # Get the contract
+    contract = w3.eth.contract(
+        address=contract_address,
+        abi=contract_abi
+    )
+
+    return contract
+
+#EH: Load the contract
+contract = load_contract()
+
+
+
+
+
 # EH: set max screen width.
 st.markdown(
         f"""<style>.main .block-container{{ max-width: 1600px }} </style> """,
@@ -43,9 +111,10 @@ st.header('NFT Submission for Auction Application')
 
 
 username=st.text_input(label='Username')
-public_key=st.text_input(label='Public Key')
+accounts = w3.eth.accounts
+public_key=st.selectbox("Select Account", options=accounts)
 asset_caption=st.text_input(label='Asset Name')
-bid_start=st.number_input("Enter Desired Bid Start amount in Token",min_value=1000,step=1000)
+bid_start=st.number_input("Enter Desired Bid initial amount",min_value=1000,step=1000)
 
 close_date_request = st.date_input(
      "Please enter bid close date(UTC)",
@@ -102,7 +171,7 @@ st.subheader("NFT Image")
 #EH: upload nft file
 image_file = st.file_uploader("Upload Images",
      type=["png","jpg","jpeg"])
-
+#EH: load file condition and display
 if image_file is not None and (len(username) > 0) and (len(public_key)>0) and (len(asset_caption)>0):
           # TO See details
           file_details = {"filename":image_file.name, "filepath":image_file.type,
@@ -120,21 +189,47 @@ if image_file is not None and (len(username) > 0) and (len(public_key)>0) and (l
           st.success("File Saved to local fileDir folder")
 
           #EH: Submit NFT for auction  
-          submit=st.button("Submit Auction Request")
-          st.write('By click this button, you agree and subject to T&C of auction company.')
+          submit=st.button("Register NFT for Auction Request")
+          st.write('By click this button, you agree and are subject to T&C of auction company.')
 
           if submit:
+               
+               #EH: register nft and mint token from smart contract
+               nft_register=contract.functions.nftRegistration(
+                    public_key,#Owner address
+                    asset_caption,#art name
+                    username,#artist/owner name
+                    int(bid_start),#initial appraisal value
+                    str(image_file.size)#tokenURI
 
-              #EH: provide trx hash and asset hash
-              #EH: Need to write more exception syntax on this part
-               st.write('transaction hash#')
-               st.write('Asset hash#')
+               ).transact({'from':public_key,'gas':1000000})
+
+               receipt=w3.eth.waitForTransactionReceipt(nft_register)
+
+              #EH: provide trx hash
+
+               st.write("Transaction receipt mined:")
+               st.write(dict(receipt))
+               st.markdown("---")
 
                #EH: display transaction confirmation
                trx_df=pd.DataFrame(file_details,index=[0])
                st.dataframe(trx_df)
-               insert_data(trx_df)
+
+
 
 else:
      st.write("Please check inputs.") 
-
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
