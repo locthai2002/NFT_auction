@@ -1,5 +1,6 @@
 # NFT_auction
 
+<<<<<<< HEAD
 NFT artwork auction application allows asset owner applying NFT for auction and public bidding on NFT via Python, Blockchain and Smart Contract.  Python serves front end communication with users.  Blockchain provides benefits of decentralization, distributed architecture, trust, record keeping, and transparency of bidding/asset transfer history.  Smart Contract sets a set of rules and allows credible transactions of digital assets without third parties. 
 
 
@@ -200,3 +201,15 @@ To enhance your KaseiCoin crowdsale with this added functionality, complete the 
     * When sending ether to the contract, make sure that you meet the contract’s `goal`. Then, finalize the sale using the `Crowdsale` contract's `finalize` function. To finalize the sale, `isOpen` must return false (`isOpen` comes from `TimedCrowdsale` and checks to see whether the `close` time has passed yet). If you set the `goal` to 300 ether, for example, you may need to purchase tokens from multiple accounts in order to meet the goal. If you run out of pre-funded accounts in Ganache, you can create a new workspace.
 
     * View your tokens in MetaMask. In MetaMask, click Add Token, then click Custom Token,  and enter the token contract’s address. Make sure to purchase higher amounts of tokens in order to see the denomination appear in your wallet as more than a few wei worth.
+=======
+### NFT Submission Demo
+https://user-images.githubusercontent.com/95498383/172299879-81cb71d7-6bc3-4c6f-a974-921e16d3bb50.mp4
+
+### NFT Auction
+
+https://user-images.githubusercontent.com/95498383/172299934-a9bdcf37-6293-4155-b893-41f6c3603cd8.mp4
+
+### NFT Approval
+
+https://user-images.githubusercontent.com/95498383/172528594-3ca3de35-c45d-4054-80cf-6ec7cc9201f8.mp4
+>>>>>>> 3c2e6d48f8fcbae1db77a48f8da6e6fb28df33ee
